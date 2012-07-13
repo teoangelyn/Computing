@@ -1,5 +1,7 @@
 # carplate.py
-
+# Author: Angelyn Teo
+# Date: 13 July 2012
+# Program to validate car plate numbers and output invalid car plate numbers to a file
 
 entry = input("Input carplate number in uppercase: ")
 carplate = list(entry)
@@ -9,15 +11,14 @@ def check_digit_carplate(carplate):
     # remove first alphabet if carplate starts with 'S'
         if carplate[0] == 'S':
             del carplate[0]
-
+            
+    # remove last alphabet
     carplate = carplate[0:-1]
 
     # insert 0 before first numerical digit if there are only 3 numbers
     if len(carplate) == 5:
         carplate.insert(2,'0')
         
-    # remove last alphabet
-
     alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
             'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
             'W', 'X', 'Y', 'Z']
@@ -37,7 +38,7 @@ def check_digit_carplate(carplate):
     sum_of_products = 0
 
     for i in range (0, len(weights)):
-        
+        # compute sum of products
         sum_of_products = sum_of_products + int(carplate[i]) * weights[i]
     # compute checksum using modulo
     return sum_of_products % 19
@@ -62,10 +63,4 @@ if is_valid_carplate(carplate) is False:
 else:
     print("Valid carplate number")
 
-
-
 is_valid_carplate(carplate)
-
-
-
-
