@@ -1,5 +1,5 @@
 # carplate.py
-# Author: Angelyn Teo
+# Author: A Teo
 # Date: 13 July 2012
 # Program to validate car plate numbers and output invalid car plate numbers to a file
 
